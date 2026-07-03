@@ -491,6 +491,10 @@ em {
     animation: float 7s ease-in-out infinite
 }
 
+.hero-orb img{
+    border-radius: 50%;
+}
+
 .orb-one {
     width: 260px;
     height: 260px;
@@ -707,6 +711,42 @@ em {
     letter-spacing: .15em;
     margin-top: .4rem;
     color: rgba(255, 255, 255, .5)
+}
+
+.qualification {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.qualification span {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+    font-size: 11px !important;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: .3s;
+    font-style:inherit ;
+}
+
+
+.qualification span:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+.signature small {
+    display: block;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.5px;
 }
 
 .principal-image {
