@@ -1131,6 +1131,14 @@ em {
     cursor: pointer
 }
 
+.Van-Wisdon img{
+    object-position: bottom;
+}
+
+.Assemlby img{
+    object-position: left;
+}
+
 .gallery-item::after {
     content: "";
     position: absolute;
