@@ -18,6 +18,7 @@
 
 <body>
   <div class="cursor-glow" aria-hidden="true"></div>
+
   <header class="site-header" id="header">
     <a class="brand" href="#home" aria-label="Wisdom Academy home">
       <span class="brand-mark"><img src="assets/school-logo.jpeg" alt="School-Logo"></span>
@@ -29,7 +30,7 @@
       <a href="#about">About</a>
       <a href="#General-Facilities">Facilities</a>
       <a href="#admissions">Admissions</a>
-      <a href="#facilities">Facilities Old</a>
+      <!-- <a href="#facilities">Facilities Old</a> -->
       <a href="#gallery">Gallery</a>
       <a href="#events">Events</a>
       <a href="#contact">Contact us</a>
@@ -406,17 +407,45 @@
             <h3>Multi-Sport Arena</h3>
           </div>
         </article>
+
+         <article class="facility-card"><img src="assets/A1 Canteen.png" alt="School sports ground"><span>04</span>
+          <div>
+            <p>A1 Canteen</p>
+            <h3>Lunch Area</h3>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="tour" id="tour">
-      <img src="assets/paly-ground-after.png" alt="Wisdom Academy campus and playing field">
+    <!-- <section class="tour" id="tour">
+      <img src="assets/Ground Part.png" alt="Wisdom Academy campus and playing field">
       <div class="tour-overlay"></div>
       <div class="tour-copy reveal">
         <p class="eyebrow light">See it. Feel it. Belong.</p>
         <h2>Step inside<br><em>Wisdom Academy.</em></h2><button class="play-button open-video"
           aria-label="Play campus tour"><span>▶</span></button>
         <p class="duration">Campus film · 02:18</p>
+      </div>
+    </section> -->
+
+    <section class="tour" id="campus-film">
+      <img src="assets/Ground Part.png" alt="Wisdom Academy campus and playing field">
+
+      <div class="tour-overlay"></div>
+
+      <div class="tour-copy reveal">
+        <p class="eyebrow light">Experience our campus</p>
+
+        <h2>
+          Explore<br>
+          <em>Wisdom Academy.</em>
+        </h2>
+
+        <button class="play-button open-video" aria-label="Play campus video">
+          <span>▶</span>
+        </button>
+
+        <p class="duration">Campus Tour Film · 03:10</p>
       </div>
     </section>
 
@@ -712,12 +741,15 @@
       </div>
     </section>
 
-    <section class="cta" id="contact">
+    <section class="cta Addmission-Appointment" id="contact">
       <div class="col-md-6">
         <div class="cta-glow"></div>
         <p class="eyebrow light">Admissions 2026–27</p>
         <h2>Give their potential<br>a place to <em>flourish.</em></h2>
-        <p>Applications are now open. Come experience the warmth, energy and ambition of Wisdom Academy.</p>
+
+        <div class="Addmission-Para">
+          <p>Applications are now open. Come experience the warmth, energy and ambition of Wisdom Academy.</p>
+        </div>
 
         <div>
           <a class="button button-gold ripple" href="mailto:wisdomacademy2011@gmail.com">Apply for admission ↗</a>
@@ -727,8 +759,28 @@
       </div>
 
       <div class="col-md-6">
-
+        <div class="appointment-box">
+          <p class="eyebrow light">Appointment 2026–27</p>
+          <h3>Book a School Visit</h3>
+          <form id="appointment-form">
+            <input type="text" id="parentName" name="parentName" placeholder="Parent Name" aria-label="Parent Name"
+              autocomplete="name" required>
+            <input type="tel" id="phone" name="phone" placeholder="Mobile Number" aria-label="Mobile Number"
+              autocomplete="tel" inputmode="tel" required>
+            <select id="appointmentType" name="appointmentType" aria-label="Appointment Type" required>
+              <option value="">Select Appointment Type</option>
+              <option>Campus Visit</option>
+              <option>Admission Enquiry</option>
+              <option>Principal Meeting</option>
+              <option>Fee Discussion</option>
+            </select>
+            <input type="date" id="date" name="date" aria-label="Preferred Visit Date" required>
+            <textarea id="message" name="message" placeholder="Message" aria-label="Message"></textarea>
+            <button class="button button-gold ripple" type="submit">Book Appointment ↗</button>
+          </form>
+        </div>
       </div>
+
     </section>
   </main>
 
@@ -784,17 +836,13 @@
     </div>
   </div> -->
 
+
   <div class="modal video-modal" aria-hidden="true">
 
     <button class="modal-close" aria-label="Close">×</button>
 
     <div class="video-frame">
-
-      <!-- <iframe src="https://www.youtube.com/embed/tOJjQWO8nmQ?rel=0" title="Wisdom Academy Campus Film" frameborder="0"
-        allow="autoplay; fullscreen" allowfullscreen>
-      </iframe> -->
-
-      <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+      <iframe width="420" height="345" src="https://www.youtube.com/embed/Cx87e97aYsU?autoplay=1&mute=1&start=45&rel=0">
       </iframe>
 
     </div>

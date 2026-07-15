@@ -19,6 +19,8 @@ let testimonial = 0; const track = $(".testimonial-track"), current = $(".testim
 function setTestimonial(i) { testimonial = (i + 2) % 2; track.style.transform = `translateX(-${testimonial * 100}%)`; current.textContent = `0${testimonial + 1}` }
 $(".test-next").onclick = () => setTestimonial(testimonial + 1); $(".test-prev").onclick = () => setTestimonial(testimonial - 1);
 
+
+
 function openModal(modal) { modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden" }
 function closeModal(modal) { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); document.body.style.overflow = "" }
 const videoModal = $(".video-modal"), lightbox = $(".lightbox");
@@ -27,6 +29,8 @@ $$(".modal-close").forEach(b => b.addEventListener("click", () => closeModal(b.c
 $$(".modal").forEach(m => m.addEventListener("click", e => { if (e.target === m) closeModal(m) }));
 $$(".gallery-item").forEach(item => item.addEventListener("click", () => { $("img", lightbox).src = $("img", item).src; $("figcaption", lightbox).textContent = item.dataset.caption; openModal(lightbox) }));
 addEventListener("keydown", e => { if (e.key === "Escape") $$(".modal.open").forEach(closeModal) });
+
+
 
 addEventListener("mousemove", e => { const glow = $(".cursor-glow"); glow.style.left = e.clientX + "px"; glow.style.top = e.clientY + "px" }, { passive: true });
 $$(".ripple").forEach(btn => btn.addEventListener("click", e => { const r = document.createElement("i"), box = btn.getBoundingClientRect(); r.style.cssText = `position:absolute;left:${e.clientX - box.left}px;top:${e.clientY - box.top}px;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);transform:translate(-50%,-50%);animation:ripple .6s ease-out;pointer-events:none`; btn.style.position = "relative"; btn.style.overflow = "hidden"; btn.appendChild(r); setTimeout(() => r.remove(), 650) }));
