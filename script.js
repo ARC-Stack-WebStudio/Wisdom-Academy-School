@@ -40,3 +40,35 @@ addEventListener("scroll", () => { const y = scrollY; $$(".hero-slide").forEach(
 
 
 
+
+document.getElementById("appointment-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const parentName = document.getElementById("parentName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const appointmentType = document.getElementById("appointmentType").value;
+    const date = document.getElementById("date").value;
+    const message = document.getElementById("message").value.trim();
+
+    const whatsappNumber = "919096017326";
+
+    const whatsappMessage =
+        `📚 *New School Appointment Request*
+
+    👤 *Parent Name:* ${parentName}
+    📱 *Mobile Number:* ${phone}
+
+    📌 *Appointment Type:* ${appointmentType}
+    📅 *Preferred Visit Date:* ${date}
+
+    💬 *Message:*
+    ${message || "No additional message"}
+
+    ━━━━━━━━━━━━━━━━━━━━━━
+    Please contact the parent to confirm the appointment.
+    Thank you.`;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(url, "_blank");
+});

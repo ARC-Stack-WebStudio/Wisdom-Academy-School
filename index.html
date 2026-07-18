@@ -408,7 +408,7 @@
           </div>
         </article>
 
-         <article class="facility-card"><img src="assets/A1 Canteen.png" alt="School sports ground"><span>04</span>
+        <article class="facility-card"><img src="assets/A1 Canteen.png" alt="School sports ground"><span>04</span>
           <div>
             <p>A1 Canteen</p>
             <h3>Lunch Area</h3>
@@ -763,20 +763,25 @@
           <p class="eyebrow light">Appointment 2026–27</p>
           <h3>Book a School Visit</h3>
           <form id="appointment-form">
-            <input type="text" id="parentName" name="parentName" placeholder="Parent Name" aria-label="Parent Name"
-              autocomplete="name" required>
-            <input type="tel" id="phone" name="phone" placeholder="Mobile Number" aria-label="Mobile Number"
-              autocomplete="tel" inputmode="tel" required>
-            <select id="appointmentType" name="appointmentType" aria-label="Appointment Type" required>
+            <input type="text" id="parentName" name="parentName" placeholder="Parent Name" required>
+
+            <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required>
+
+            <select id="appointmentType" name="appointmentType" required>
               <option value="">Select Appointment Type</option>
               <option>Campus Visit</option>
               <option>Admission Enquiry</option>
               <option>Principal Meeting</option>
               <option>Fee Discussion</option>
             </select>
-            <input type="date" id="date" name="date" aria-label="Preferred Visit Date" required>
-            <textarea id="message" name="message" placeholder="Message" aria-label="Message"></textarea>
-            <button class="button button-gold ripple" type="submit">Book Appointment ↗</button>
+
+            <input type="date" id="date" name="date" required>
+
+            <textarea id="message" name="message" placeholder="Message"></textarea>
+
+            <button class="button button-gold ripple" type="submit">
+              Book Appointment ↗
+            </button>
           </form>
         </div>
       </div>
