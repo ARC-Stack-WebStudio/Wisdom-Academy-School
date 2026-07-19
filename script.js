@@ -21,8 +21,33 @@ $(".test-next").onclick = () => setTestimonial(testimonial + 1); $(".test-prev")
 
 
 
-function openModal(modal) { modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden" }
-function closeModal(modal) { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); document.body.style.overflow = "" }
+// function openModal(modal) { modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden" }
+// function closeModal(modal) { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); document.body.style.overflow = "" }
+function openModal(modal) {
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+}
+
+function closeModal(modal) {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+
+    const iframe = modal.querySelector("iframe");
+    if (iframe) {
+        const url = iframe.src;
+        iframe.src = "";
+        iframe.src = url;
+    }
+
+    const video = modal.querySelector("video");
+    if (video) {
+        video.pause();
+        video.currentTime = 0;
+    }
+}
+
 const videoModal = $(".video-modal"), lightbox = $(".lightbox");
 $$(".open-video").forEach(b => b.addEventListener("click", () => openModal(videoModal)));
 $$(".modal-close").forEach(b => b.addEventListener("click", () => closeModal(b.closest(".modal"))));

@@ -115,6 +115,10 @@ em {
     margin-bottom: 1.4rem
 }
 
+.eyebrow-Goals{
+    color: var(--gold);
+}
+
 .eyebrow em {
     font-size: 45px;
     color: #9b6d2e;
