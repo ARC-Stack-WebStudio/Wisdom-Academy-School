@@ -97,3 +97,33 @@ document.getElementById("appointment-form").addEventListener("submit", function 
 
     window.open(url, "_blank");
 });
+
+
+
+
+// Popup message functionality
+const popup = document.getElementById("popupOverlay");
+const closeBtn = document.getElementById("popupClose");
+
+// Popup appears after 5 seconds
+setTimeout(() => {
+
+    popup.classList.add("popup-show");
+
+    // After popup has been visible for 5 seconds,
+    // show the close button.
+    setTimeout(() => {
+
+        closeBtn.classList.add("show");
+
+    }, 8000);
+
+}, 5000);
+
+// Close popup
+
+closeBtn.addEventListener("click", () => {
+
+    popup.classList.remove("popup-show");
+
+});

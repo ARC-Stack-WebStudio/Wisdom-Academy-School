@@ -128,7 +128,7 @@ em {
 
 .about-section .eyebrow {
     font-family: "Manrope", sans-serif;
-    font-size: 55px;
+    font-size: 38px;
 }
 
 .eyebrow.light {
@@ -1538,6 +1538,202 @@ em {
     color: #c8d0d8;
 
     line-height: 1.7;
+
+}
+
+
+
+/*====================================================
+        WEBSITE POPUP
+====================================================*/
+
+.popup-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(7,26,43,.55);
+    backdrop-filter:blur(4px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:99999;
+
+    opacity:0;
+    visibility:hidden;
+    transition:.45s ease;
+}
+
+.popup-overlay.popup-show{
+    opacity:1;
+    visibility:visible;
+}
+
+.popup-card{
+
+    width:min(90%,500px);
+
+    background:var(--paper);
+
+    border-radius:22px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    border-top:6px solid var(--gold);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+
+    transform:translateY(40px) scale(.9);
+
+    transition:.45s ease;
+}
+
+.popup-overlay.popup-show .popup-card{
+    transform:translateY(0) scale(1);
+}
+
+.popup-icon{
+
+    width:80px;
+    height:80px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold2)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:38px;
+
+    margin-bottom:22px;
+}
+
+.popup-card h1{
+
+    font-family:var(--serif);
+
+    color:var(--ink);
+
+    font-size:34px;
+
+    margin-bottom:15px;
+}
+
+.popup-card h2{
+
+    font-family:var(--serif);
+
+    color:var(--ink);
+
+    font-size:30px;
+
+    margin-bottom:15px;
+}
+
+.popup-card p{
+
+    color:var(--text);
+
+    line-height:1.8;
+
+    font-family:var(--sans);
+}
+
+.popup-small{
+
+    margin-top:15px;
+
+    color:var(--muted);
+
+    font-size:15px;
+}
+
+/* Close Button */
+
+.popup-close{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:var(--ink);
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.3s;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:scale(.6);
+
+}
+
+.popup-close:hover{
+
+    background:var(--gold2);
+
+    transform:scale(1.05);
+
+}
+
+.popup-close.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:scale(1);
+
+}
+
+/* Required because close button is absolute */
+
+.popup-card{
+
+    position:relative;
+}
+
+@media(max-width:768px){
+
+    .popup-card{
+
+        padding:35px 25px;
+    }
+
+    .popup-card h2{
+
+        font-size:27px;
+    }
 
 }
 
