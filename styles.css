@@ -162,7 +162,7 @@ em {
 }
 
 .button-gold:hover {
-    background: var(--gold2);
+    background: var(--ink);
     transform: translateY(-2px)
 }
 
