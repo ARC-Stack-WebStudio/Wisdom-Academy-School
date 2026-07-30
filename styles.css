@@ -86,11 +86,11 @@ em {
     padding: 100px 120px;
 }
 
-.Gallery-Wisdom{
+.Gallery-Wisdom {
     background: var(--ink);
 }
 
-.Gallery-Wisdom h2{
+.Gallery-Wisdom h2 {
     color: white;
 }
 
@@ -103,7 +103,7 @@ em {
     text-align: left
 }
 
-.Addmission-Appointment .Addmission-Para p{
+.Addmission-Appointment .Addmission-Para p {
     margin: 40px;
 }
 
@@ -115,7 +115,7 @@ em {
     margin-bottom: 1.4rem
 }
 
-.eyebrow-Goals{
+.eyebrow-Goals {
     color: var(--gold);
 }
 
@@ -161,8 +161,8 @@ em {
     color: var(--ink)
 }
 
-.admissions-apply:hover{
-     background: var(--ink) !important;
+.admissions-apply:hover {
+    background: var(--ink) !important;
     transform: translateY(-2px)
 }
 
@@ -1153,7 +1153,7 @@ em {
     gap: 1rem
 }
 
-.new-magazine-grid{
+.new-magazine-grid {
     margin-top: 7px;
 }
 
@@ -1165,11 +1165,11 @@ em {
     cursor: pointer
 }
 
-.Van-Wisdon img{
+.Van-Wisdon img {
     object-position: bottom;
 }
 
-.Assemlby img{
+.Assemlby img {
     object-position: left;
 }
 
@@ -1552,192 +1552,190 @@ em {
         WEBSITE POPUP
 ====================================================*/
 
-.popup-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(7,26,43,.55);
-    backdrop-filter:blur(4px);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:99999;
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 26, 43, .55);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
 
-    opacity:0;
-    visibility:hidden;
-    transition:.45s ease;
+    opacity: 0;
+    visibility: hidden;
+    transition: .45s ease;
 }
 
-.popup-overlay.popup-show{
-    opacity:1;
-    visibility:visible;
+.popup-overlay.popup-show {
+    opacity: 1;
+    visibility: visible;
 }
 
-.popup-card{
+.popup-card {
 
-    width:min(90%,500px);
+    width: min(90%, 500px);
 
-    background:var(--paper);
+    background: var(--paper);
 
-    border-radius:22px;
+    border-radius: 22px;
 
-    padding:45px 35px;
+    padding: 45px 35px;
 
-    text-align:center;
+    text-align: center;
 
-    border-top:6px solid var(--gold);
+    border-top: 6px solid var(--gold);
 
-    box-shadow:0 25px 60px rgba(0,0,0,.25);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .25);
 
-    transform:translateY(40px) scale(.9);
+    transform: translateY(40px) scale(.9);
 
-    transition:.45s ease;
+    transition: .45s ease;
 }
 
-.popup-overlay.popup-show .popup-card{
-    transform:translateY(0) scale(1);
+.popup-overlay.popup-show .popup-card {
+    transform: translateY(0) scale(1);
 }
 
-.popup-icon{
+.popup-icon {
 
-    width:80px;
-    height:80px;
+    width: 80px;
+    height: 80px;
 
-    margin:auto;
+    margin: auto;
 
-    border-radius:50%;
+    border-radius: 50%;
 
-    background:linear-gradient(
-        135deg,
-        var(--gold),
-        var(--gold2)
-    );
+    background: linear-gradient(135deg,
+            var(--gold),
+            var(--gold2));
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    font-size:38px;
+    font-size: 38px;
 
-    margin-bottom:22px;
+    margin-bottom: 22px;
 }
 
-.popup-card h1{
+.popup-card h1 {
 
-    font-family:var(--serif);
+    font-family: var(--serif);
 
-    color:var(--ink);
+    color: var(--ink);
 
-    font-size:34px;
+    font-size: 34px;
 
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 
-.popup-card h2{
+.popup-card h2 {
 
-    font-family:var(--serif);
+    font-family: var(--serif);
 
-    color:var(--ink);
+    color: var(--ink);
 
-    font-size:30px;
+    font-size: 30px;
 
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 
-.popup-card p{
+.popup-card p {
 
-    color:var(--text);
+    color: var(--text);
 
-    line-height:1.8;
+    line-height: 1.8;
 
-    font-family:var(--sans);
+    font-family: var(--sans);
 }
 
-.popup-small{
+.popup-small {
 
-    margin-top:15px;
+    margin-top: 15px;
 
-    color:var(--muted);
+    color: var(--muted);
 
-    font-size:15px;
+    font-size: 15px;
 }
 
 /* Close Button */
 
-.popup-close{
+.popup-close {
 
-    position:absolute;
+    position: absolute;
 
-    top:18px;
+    top: 18px;
 
-    right:18px;
+    right: 18px;
 
-    width:42px;
+    width: 42px;
 
-    height:42px;
+    height: 42px;
 
-    border:none;
+    border: none;
 
-    border-radius:50%;
+    border-radius: 50%;
 
-    background:var(--gold);
+    background: var(--gold);
 
-    color:var(--ink);
+    color: var(--ink);
 
-    font-size:28px;
+    font-size: 28px;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    justify-content:center;
+    justify-content: center;
 
-    transition:.3s;
+    transition: .3s;
 
-    opacity:0;
+    opacity: 0;
 
-    visibility:hidden;
+    visibility: hidden;
 
-    transform:scale(.6);
-
-}
-
-.popup-close:hover{
-
-    background:var(--gold2);
-
-    transform:scale(1.05);
+    transform: scale(.6);
 
 }
 
-.popup-close.show{
+.popup-close:hover {
 
-    opacity:1;
+    background: var(--gold2);
 
-    visibility:visible;
+    transform: scale(1.05);
 
-    transform:scale(1);
+}
+
+.popup-close.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
 
 }
 
 /* Required because close button is absolute */
 
-.popup-card{
+.popup-card {
 
-    position:relative;
+    position: relative;
 }
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-    .popup-card{
+    .popup-card {
 
-        padding:35px 25px;
+        padding: 35px 25px;
     }
 
-    .popup-card h2{
+    .popup-card h2 {
 
-        font-size:27px;
+        font-size: 27px;
     }
 
 }
@@ -1926,7 +1924,7 @@ em {
     pointer-events: none;
 }
 
-.cta > *:not(.cta-glow) {
+.cta>*:not(.cta-glow) {
     position: relative;
     z-index: 2;
 }
@@ -2176,8 +2174,8 @@ em {
 }
 
 .video-frame iframe {
-    width:85%;
-    height:85%;
+    width: 85%;
+    height: 85%;
     border-radius: 20px;
 }
 
@@ -2226,7 +2224,7 @@ em {
 @media(max-width:1100px) {
     .Addmission-Appointment {
         grid-template-columns: 1fr;
-        max-width: 760px;
+        /* max-width: 760px; */
         margin: 0 auto
     }
 
@@ -2308,9 +2306,9 @@ em {
         margin-top: 1rem
     }
 
-    .academic-grid {
+    /* .academic-grid {
         grid-template-columns: 1fr
-    }
+    } */
 
     .academic-visual {
         height: 600px
@@ -2573,4 +2571,22 @@ em {
         opacity: 1;
         transform: none
     }
+}
+
+
+/* My CSS Responsivnes */
+
+@media(max-width:1024px) {
+    .about-section .eyebrow {
+        font-size: 27px;
+    }
+
+    .about-section .lead {
+        font-size: 18px / 1.6 var(--serif);
+    }
+
+    .classroom-facilities{
+        margin-top: 100px;
+    }
+
 }
