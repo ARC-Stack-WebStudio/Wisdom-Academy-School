@@ -2368,7 +2368,7 @@ em {
     .hero-content {
         left: 1.25rem;
         right: 1.25rem;
-        top: 46%;
+        top: 55%;
         max-width: calc(100vw - 2.5rem)
     }
 
@@ -2442,7 +2442,7 @@ em {
     }
 
     .principal-image::after {
-        display: none
+        bottom: 6px;
     }
 
     .quote-mark {
@@ -2585,8 +2585,70 @@ em {
         font-size: 18px / 1.6 var(--serif);
     }
 
-    .classroom-facilities{
+    .classroom-facilities {
         margin-top: 100px;
     }
 
+}
+
+
+@media (max-width: 881px) {
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 214px;
+    }
+
+    .principal {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .academic-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 340px;
+    }
+
+    .event-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .magazine-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 360px 230px 230px;
+    }
+
+    .facilities {
+        padding: 100px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .about {
+        flex-direction: column;
+    }
+
+    .principal-image {
+        padding-bottom: 25px;
+        width: 62%
+    }
+
+    .academic-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 340px;
+    }
+
+}
+
+@media (max-width:512px){
+       .hero h1 {
+        font-size: 60px;
+    }
 }
