@@ -605,7 +605,7 @@ em {
 
 .about {
     display: grid;
-    grid-template-columns: minmax(300px, .9fr) minmax(400px, 1fr);
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1fr);
     gap: clamp(3rem, 8vw, 9rem);
     /* align-items: center; */
     position: relative
@@ -1225,6 +1225,16 @@ em {
     display: grid;
     grid-template-columns: 1.05fr .95fr;
     gap: 5vw
+}
+
+.about>*,
+.principal>*,
+.academic-grid>*,
+.event-grid>*,
+.admissions>*,
+.testimonials>*,
+.Addmission-Appointment>* {
+    min-width: 0
 }
 
 .event-image {
@@ -2201,7 +2211,8 @@ em {
 .reveal-left,
 .reveal-right {
     opacity: 0;
-    transition: 1s cubic-bezier(.2, .7, .2, 1)
+    transition: opacity 1s cubic-bezier(.2, .7, .2, 1), transform 1s cubic-bezier(.2, .7, .2, 1);
+    will-change: opacity, transform
 }
 
 .reveal {
@@ -2474,6 +2485,15 @@ em {
         height: 480px
     }
 
+    .facility-head {
+        flex-wrap: wrap;
+        gap: 1.5rem
+    }
+
+    .rail-controls {
+        flex: 0 0 auto
+    }
+
     .tour {
         height: 75vh
     }
@@ -2509,7 +2529,7 @@ em {
     }
 
     .small-events article {
-        grid-template-columns: 120px 1fr
+        grid-template-columns: 120px 1fr;
     }
 
     .small-events img {
@@ -2556,6 +2576,15 @@ em {
     .cursor-glow {
         display: none
     }
+
+    /* Keep reveal motion inside the 1.25rem mobile section gutter. */
+    .reveal-left {
+        transform: translateX(-12px)
+    }
+
+    .reveal-right {
+        transform: translateX(12px)
+    }
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -2597,7 +2626,7 @@ em {
     .about {
         display: flex;
         flex-direction: column;
-        gap: 214px;
+        gap: 220px;
     }
 
     .principal {
@@ -2609,7 +2638,20 @@ em {
     .academic-grid {
         display: flex;
         flex-direction: column;
-        gap: 340px;
+        gap: 4rem;
+    }
+
+    .academic-visual {
+        height: auto
+    }
+
+    .academic-visual>img {
+        max-width: 100%;
+        height: auto
+    }
+
+    .floating-score {
+        right: 0
     }
 
     .event-grid {
@@ -2636,19 +2678,31 @@ em {
 
     .principal-image {
         padding-bottom: 25px;
-        width: 62%
+        width: 100%
     }
 
     .academic-grid {
         display: flex;
         flex-direction: column;
-        gap: 340px;
+        gap: 4rem;
+    }
+
+    .floating-score {
+        right: 10px
+    }
+
+    .facilities {
+        padding: 5.5rem 1.25rem
     }
 
 }
 
-@media (max-width:512px){
-       .hero h1 {
+@media (max-width:512px) {
+    .hero h1 {
         font-size: 60px;
+    }
+
+    .about {
+        gap: 260px;
     }
 }
