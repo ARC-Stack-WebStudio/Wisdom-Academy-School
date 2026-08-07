@@ -1235,7 +1235,7 @@ em {
 
 .event-image img,
 .small-events img {
-    transition: .5s
+    transition: .2s
 }
 
 .featured-event:hover img,
@@ -1405,6 +1405,7 @@ em {
     font-size: 30px;
 
     margin-bottom: 25px;
+  
 
 }
 
