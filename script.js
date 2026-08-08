@@ -116,9 +116,9 @@ setTimeout(() => {
 
         closeBtn.classList.add("show");
 
-    }, 8000);
+    }, 3000);
 
-}, 5000);
+}, 4000);
 
 // Close popup
 
