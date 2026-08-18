@@ -1415,7 +1415,7 @@ em {
     font-size: 30px;
 
     margin-bottom: 25px;
-  
+
 
 }
 
@@ -2050,6 +2050,11 @@ em {
     font-size: .75rem;
     line-height: 1.8;
     margin-bottom: .45rem
+}
+
+.ARC-Stack-Web {
+    color: rgba(255, 255, 255, 0.58);
+    font-size: .75rem;
 }
 
 .socials {
