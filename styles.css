@@ -2653,7 +2653,8 @@ em {
 
     .academic-visual>img {
         max-width: 100%;
-        height: auto
+        height: auto;
+        margin-left:10px;
     }
 
     .floating-score {
@@ -2684,7 +2685,9 @@ em {
 
     .principal-image {
         padding-bottom: 25px;
-        width: 100%
+        width: 100%;
+        margin-right: 20px;
+        
     }
 
     .academic-grid {
@@ -2702,6 +2705,12 @@ em {
         padding: 5.5rem 1.25rem
     }
 
+    .Science-Lab img {
+        margin-left: 25px;
+    }
+
+   
+
 }
 
 @media (max-width:512px) {
@@ -2712,6 +2721,10 @@ em {
     .about {
         gap: 260px;
     }
+
+    .Science-Lab img {
+        margin-left: 25px;
+    }
 }
 
 
@@ -2719,5 +2732,13 @@ em {
     .floating-score {
         right: -22px;
         bottom: 10px;
+    }
+}
+
+@media (max-width: 455px) {
+    .about-image::before {
+        bottom: -40px;
+        left: -4px;
+        width: 80%;
     }
 }
