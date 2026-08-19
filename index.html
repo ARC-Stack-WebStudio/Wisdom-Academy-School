@@ -808,10 +808,13 @@
         <div class="appointment-box">
           <p class="eyebrow light">Appointment 2026–27</p>
           <h3>Book a School Visit</h3>
-          <form id="appointment-form">
-            <input type="text" id="parentName" name="parentName" placeholder="Parent Name" required>
+          <form id="appointment-form" novalidate>
+            <input type="text" id="parentName" name="parentName" placeholder="Parent Name" required
+              pattern="[A-Za-z]+( [A-Za-z]+)*" title="Enter letters and spaces only." autocomplete="name">
 
-            <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required>
+            <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required
+              inputmode="numeric" minlength="10" maxlength="10" pattern="[6-9][0-9]{9}"
+              title="Enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9." autocomplete="tel">
 
             <select id="appointmentType" name="appointmentType" required>
               <option value="">Select Appointment Type</option>

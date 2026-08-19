@@ -66,36 +66,95 @@ addEventListener("scroll", () => { const y = scrollY; $$(".hero-slide").forEach(
 
 
 
-document.getElementById("appointment-form").addEventListener("submit", function (e) {
+const appointmentForm = document.getElementById("appointment-form");
+const parentNameInput = document.getElementById("parentName");
+const phoneInput = document.getElementById("phone");
+const appointmentTypeInput = document.getElementById("appointmentType");
+const dateInput = document.getElementById("date");
+const messageInput = document.getElementById("message");
+
+function getTodayISODate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
+
+function validateAppointmentForm() {
+    const parentName = parentNameInput.value.trim().replace(/\s+/g, " ");
+    const phone = phoneInput.value;
+    const appointmentType = appointmentTypeInput.value;
+    const selectedDate = dateInput.value;
+    const today = getTodayISODate();
+
+    parentNameInput.value = parentName;
+    phoneInput.setCustomValidity("");
+    parentNameInput.setCustomValidity("");
+    appointmentTypeInput.setCustomValidity("");
+    dateInput.setCustomValidity("");
+
+    if (!/^[A-Za-z]+(?: [A-Za-z]+)*$/.test(parentName)) {
+        parentNameInput.setCustomValidity("Please enter the parent name using letters and spaces only.");
+    }
+
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+        phoneInput.setCustomValidity("Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.");
+    }
+
+    if (!appointmentType) {
+        appointmentTypeInput.setCustomValidity("Please select an appointment type.");
+    }
+
+    if (!selectedDate) {
+        dateInput.setCustomValidity("Please select a preferred visit date.");
+    } else if (selectedDate < today) {
+        dateInput.setCustomValidity("Please select today or a future date.");
+    }
+
+    return appointmentForm.checkValidity();
+}
+
+// Use the visitor's local calendar date so the date picker disables earlier dates.
+dateInput.min = getTodayISODate();
+
+parentNameInput.addEventListener("input", function () {
+    this.value = this.value.replace(/[^A-Za-z\s]/g, "").replace(/\s{2,}/g, " ");
+    validateAppointmentForm();
+});
+
+parentNameInput.addEventListener("blur", function () {
+    this.value = this.value.trim().replace(/\s+/g, " ");
+    validateAppointmentForm();
+});
+
+phoneInput.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "").slice(0, 10);
+    validateAppointmentForm();
+});
+
+[appointmentTypeInput, dateInput].forEach((field) => {
+    field.addEventListener("change", validateAppointmentForm);
+});
+
+appointmentForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const parentName = document.getElementById("parentName").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const appointmentType = document.getElementById("appointmentType").value;
-    const date = document.getElementById("date").value;
-    const message = document.getElementById("message").value.trim();
+    if (!validateAppointmentForm()) {
+        appointmentForm.reportValidity();
+        return;
+    }
 
+    const parentName = parentNameInput.value;
+    const phone = phoneInput.value;
+    const appointmentType = appointmentTypeInput.value;
+    const date = dateInput.value;
+    const message = messageInput.value.trim() || "No additional message";
     const whatsappNumber = "919096017326";
-
-    const whatsappMessage =
-        `📚 *New School Appointment Request*
-
-    👤 *Parent Name:* ${parentName}
-    📱 *Mobile Number:* ${phone}
-
-    📌 *Appointment Type:* ${appointmentType}
-    📅 *Preferred Visit Date:* ${date}
-
-    💬 *Message:*
-    ${message || "No additional message"}
-
-    ━━━━━━━━━━━━━━━━━━━━━━
-    Please contact the parent to confirm the appointment.
-    Thank you.`;
-
+    const whatsappMessage = `📚 *New School Appointment Request*\n\n👤 *Parent Name:* ${parentName}\n📱 *Mobile Number:* ${phone}\n📌 *Appointment Type:* ${appointmentType}\n📅 *Preferred Visit Date:* ${date}\n💬 *Message:* ${message}`;
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    window.open(url, "_blank");
+    window.open(url, "_blank", "noopener,noreferrer");
 });
 
 
