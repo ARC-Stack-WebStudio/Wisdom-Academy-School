@@ -2624,6 +2624,10 @@ em {
         margin-top: 100px;
     }
 
+    .site-header.scrolled {
+        backdrop-filter: none;
+    }
+
 }
 
 
@@ -2654,7 +2658,7 @@ em {
     .academic-visual>img {
         max-width: 100%;
         height: auto;
-        margin-left:10px;
+        margin-left: 10px;
     }
 
     .floating-score {
@@ -2687,7 +2691,7 @@ em {
         padding-bottom: 25px;
         width: 100%;
         margin-right: 20px;
-        
+
     }
 
     .academic-grid {
@@ -2713,7 +2717,7 @@ em {
         backdrop-filter: none;
     }
 
-   
+
 
 }
 
