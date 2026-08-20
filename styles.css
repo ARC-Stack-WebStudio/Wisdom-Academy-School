@@ -2709,6 +2709,10 @@ em {
         margin-left: 25px;
     }
 
+    .site-header.scrolled {
+        backdrop-filter: none;
+    }
+
    
 
 }
